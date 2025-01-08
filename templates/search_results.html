@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% block title %}Search Results - NGO Finder{% endblock %}
+
+{% block content %}
+<div class="container">
+    <header class="search-header">
+        <h1>Search Results</h1>
+        <div class="search-summary">
+            {% if results %}
+                <p>Found {{ results|length }} NGO(s) matching your criteria</p>
+            {% endif %}
+        </div>
+    </header>
+
+    {% if results %}
+        <div class="ngo-list">
+            {% for ngo in results %}
+                <div class="ngo-card">
+                    <div class="ngo-header">
+                        <h2>{{ ngo.name }}</h2>
+                        <span class="ngo-category">{{ ngo.category }}</span>
+                    </div>
+                    
+                    <div class="ngo-body">
+                        <p class="ngo-description">{{ ngo.description }}</p>
+                        
+                        <div class="ngo-details">
+                            <div class="detail-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>{{ ngo.address }}</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-phone"></i>
+                                <span>{{ ngo.contact }}</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>{{ ngo.email }}</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-calendar-alt"></i>
+                                <span>Established: {{ ngo.established }}</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-users"></i>
+                                <span>{{ ngo.beneficiaries }}</span>
+                            </div>
+                        </div>
+                        
+                        <div class="ngo-actions">
+                            <a href="http://{{ ngo.website }}" target="_blank" class="btn-website">
+                                <i class="fas fa-globe"></i> Visit Website
+                            </a>
+                            <button class="btn-contact">
+                                <i class="fas fa-envelope"></i> Contact NGO
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="no-results">
+            <i class="fas fa-search"></i>
+            <p>No NGOs found matching your criteria.</p>
+            <p>Try adjusting your search parameters.</p>
+        </div>
+    {% endif %}
+    
+    <div class="search-actions">
+        <button onclick="window.location.href='{{ url_for('search') }}'" class="btn-back">
+            <i class="fas fa-arrow-left"></i> Back to Search
+        </button>
+    </div>
+</div>
+{% endblock %}

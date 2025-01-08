@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block title %}Search NGOs - NGO Finder{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>Search NGOs</h2>
+    <form method="POST" action="{{ url_for('search') }}">
+        <label for="category">Select Category:</label>
+        <select name="category" id="category">
+            <option value="Food">Food</option>
+            <option value="Clothes">Clothes</option>
+            <option value="Education">Education</option>
+        </select>
+        
+        <label for="location">Select Location:</label>
+        <select name="location" id="location">
+            <optgroup label="Delhi">
+                <option value="Dwarka, Delhi">Dwarka, Delhi</option>
+                <option value="Rohini, Delhi">Rohini, Delhi</option>
+                <option value="Pitampura, Delhi">Pitampura, Delhi</option>
+                <option value="Nehru Place, Delhi">Nehru Place, Delhi</option>
+                <option value="Lajpat Nagar, Delhi">Lajpat Nagar, Delhi</option>
+                <option value="Chandni Chowk, Delhi">Chandni Chowk, Delhi</option>
+                <option value="Kashmere Gate, Delhi">Kashmere Gate, Delhi</option>
+                <option value="Civil Lines, Delhi">Civil Lines, Delhi</option>
+                <option value="Karol Bagh, Delhi">Karol Bagh, Delhi</option>
+                <option value="Mayur Vihar, Delhi">Mayur Vihar, Delhi</option>
+                <option value="Patparganj, Delhi">Patparganj, Delhi</option>
+            </optgroup>
+            <optgroup label="Noida">
+                <option value="Sector 18, Noida">Sector 18, Noida</option>
+                <option value="Sector 62, Noida">Sector 62, Noida</option>
+                <option value="Sector 32, Noida">Sector 32, Noida</option>
+                <option value="Sector 15, Noida">Sector 15, Noida</option>
+                <option value="Sector 75, Noida">Sector 75, Noida</option>
+                <option value="Sector 51, Noida">Sector 51, Noida</option>
+            </optgroup>
+            <optgroup label="Ghaziabad">
+                <option value="Indirapuram, Ghaziabad">Indirapuram, Ghaziabad</option>
+                <option value="Vaishali, Ghaziabad">Vaishali, Ghaziabad</option>
+                <option value="Raj Nagar Extension, Ghaziabad">Raj Nagar Extension, Ghaziabad</option>
+                <option value="Kavi Nagar, Ghaziabad">Kavi Nagar, Ghaziabad</option>
+                <option value="Modinagar, Ghaziabad">Modinagar, Ghaziabad</option>
+                <option value="Crossing Republic, Ghaziabad">Crossing Republic, Ghaziabad</option>
+            </optgroup>
+        </select>
+        
+        <button type="submit">Search</button>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block title %}NGO Finder - Connect with NGOs{% endblock %}
+
+{% block content %}
+<div class="hero">
+    <div class="hero-content">
+        <h1>Connect with NGOs Making a Difference</h1>
+        <p class="hero-subtitle">Find and support NGOs working in various sectors across different locations</p>
+        <div class="hero-buttons">
+            <a href="{{ url_for('search') }}" class="cta-button">
+                <i class="fas fa-search"></i> Find NGOs
+            </a>
+            <a href="#features" class="secondary-button">
+                <i class="fas fa-info-circle"></i> Learn More
+            </a>
+        </div>
+    </div>
+</div>
+
+<section id="features" class="features">
+    <h2>Why Choose NGO Finder?</h2>
+    <div class="feature-grid">
+        <div class="feature-card">
+            <i class="fas fa-search-location"></i>
+            <h3>Easy Search</h3>
+            <p>Find NGOs based on location and category with our simple search interface</p>
+        </div>
+        <div class="feature-card">
+            <i class="fas fa-handshake"></i>
+            <h3>Direct Connect</h3>
+            <p>Connect directly with NGOs and learn about their initiatives</p>
+        </div>
+        <div class="feature-card">
+            <i class="fas fa-check-circle"></i>
+            <h3>Verified NGOs</h3>
+            <p>All NGOs are verified to ensure authenticity and reliability</p>
+        </div>
+        <div class="feature-card">
+            <i class="fas fa-heart"></i>
+            <h3>Make Impact</h3>
+            <p>Support causes you care about and make a real difference</p>
+        </div>
+    </div>
+</section>
+
+<section class="categories">
+    <h2>Categories We Cover</h2>
+    <div class="category-grid">
+        <div class="category-card">
+            <i class="fas fa-utensils"></i>
+            <h3>Food</h3>
+            <p>NGOs working to eliminate hunger</p>
+        </div>
+        <div class="category-card">
+            <i class="fas fa-tshirt"></i>
+            <h3>Clothes</h3>
+            <p>Organizations providing clothing support</p>
+        </div>
+        <div class="category-card">
+            <i class="fas fa-graduation-cap"></i>
+            <h3>Education</h3>
+            <p>Educational support initiatives</p>
+        </div>
+    </div>
+</section>
+{% endblock %}
